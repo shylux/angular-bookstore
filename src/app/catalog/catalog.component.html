@@ -1,0 +1,12 @@
+<input name="keywords" [(ngModel)]="keywords"><button (click)="search()">Search</button>
+
+<div *ngIf="selectedBook">
+    <book-details [book]="selectedBook" (back)="selectedBook=null"></book-details>
+</div>
+
+<table *ngIf="!selectedBook">
+    <tr *ngFor="let book of books" (click)="selectBook(book)">
+        <td>{{book.title}}</td>
+    </tr>
+</table>
+

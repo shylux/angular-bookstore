@@ -1,0 +1,14 @@
+<button (click)="back.emit()">Back</button>
+
+<h1>{{book.title}}</h1>
+<img [src]="book.imageUrl"/>
+<dl>
+    <dt>Authors</dt><dd>{{book.authors}}</dd>
+    <dt>Publisher</dt><dd>{{book.publisher}}</dd>
+    <dt>Publication Year</dt><dd>{{book.publicationYear}}</dd>
+    <dt>Price</dt><dd>{{book.price}}</dd>
+    <dt>Binding</dt><dd>{{book.binding}}</dd>
+    <dt>Number of pages</dt><dd>{{book.numberOfPages}}</dd>
+    <dt>ISBN</dt><dd>{{book.isbn}}</dd>
+    <dt>Description</dt><dd>{{book.description}}</dd>
+</dl>
