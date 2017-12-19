@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Book} from "./book.module";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'book-details',
@@ -7,9 +8,16 @@ import {Book} from "./book.module";
   styleUrls: ['book.component.scss']
 })
 export class BookComponent {
+
+  constructor(private router: Router) {}
+
   @Input()
   book: Book;
 
   @Output()
   public back = new EventEmitter();
+
+  public orderBook(): void {
+    this.router.navigateByUrl('/customer-details');
+  }
 }

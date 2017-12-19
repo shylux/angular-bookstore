@@ -8,6 +8,16 @@ import {FormsModule} from "@angular/forms";
 import {BookComponent} from "./book/book.component";
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { HomeComponent } from './home/home.component';
+import {RouterModule, Routes} from "@angular/router";
+
+
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'catalog', component: CatalogComponent },
+    { path: 'customer-details', component: CustomerDetailsComponent },
+    { path: '**', component: HomeComponent }
+];
 
 
 @NgModule({
@@ -19,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
