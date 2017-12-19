@@ -30,4 +30,8 @@ export class CatalogComponent {
       })) return true;
     });
   }
+
+  public goBack() {
+    this.selectedBook = null;
+  }
 }
